@@ -19,16 +19,14 @@ namespace TT
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            this.txtChiSoCu.Clear();
-            this.txtChiSoMoi.Clear();
-            this.txtHoTenKH.Clear();
-            this.txtKQ.Clear();
-            this.txtSoNhanKhau.Clear();
-            this.txtTongSoMetKhoiSD.Clear();
-            this.txtTongTienPT.Clear();
-            this.txtTongTienSD.Clear();
-            this.txtTrongDinhMuc.Clear();
-            this.txtVuotDinhMuc.Clear();
+            foreach (var c in this.Controls)
+            {
+                if (c is TextBox)
+                {
+                    ((TextBox)c).Text = String.Empty;
+                }
+            }
+
             this.txtHoTenKH.Focus();
         }
 
